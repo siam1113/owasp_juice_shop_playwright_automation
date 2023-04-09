@@ -2,7 +2,6 @@ import { test, expect } from "@playwright/test";
 import CheckoutPage from "../../pageObjects/CheckoutPage";
 import InventoryPage from "../../pageObjects/InventoryPage";
 import LoginPage from "../../pageObjects/LoginPage";
-import { URLS } from "../../pageData/pageData";
 
 test(`Verify completing order with single item`, async ({ page }) => {
   const loginPage = new LoginPage(page);

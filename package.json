@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "apiTests": "npx playwright test tests/api/ --workers=1",
+    "e2eTests": "npx playwright test tests/e2e/ --workers=1",
+    "smokeTests": "npx playwright test tests/smoke/ --workers=1",
+    "allTests": "npx playwright test tests --workers=1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

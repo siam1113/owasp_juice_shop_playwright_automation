@@ -28,5 +28,6 @@ export default class LoginPage {
     await this.emailInputField.fill(logInCredentials.userName);
     await this.passwordInputField.fill(logInCredentials.password);
     await this.loginBtn.click();
+    await this.page.locator("text='Me want it!'").click();
   }
 }

@@ -20,7 +20,7 @@ export default class CheckoutPage {
 
   // Payment
   selectField: Locator;
-  inputField: Locator;
+  inputTextField: Locator;
   addNewCardOption: Locator;
   cardNameInputField: Locator;
   cardNumberInputField: Locator;
@@ -61,11 +61,15 @@ export default class CheckoutPage {
     this.selectRadioBtn = page.locator("span.mat-radio-outer-circle");
 
     // Payment
-    this.inputField = page.locator("input");
+    this.inputTextField = page.locator("input[type=text]");
     this.selectField = page.locator("select");
     this.addNewCardOption = page.locator("text=' Add new card '");
-    this.cardNameInputField = this.inputField.nth(2);
-    this.cardNumberInputField = this.inputField.nth(3);
+    this.cardNameInputField = this.page.locator(
+      "//*[text()='Name']/parent::label/parent::span/preceding-sibling::input"
+    );
+    this.cardNumberInputField = this.page.locator(
+      "//*[text()='Card Number']/parent::label/parent::span/preceding-sibling::input"
+    );
     this.expiryMonthInputField = this.selectField.nth(0);
     this.expiryYearInputField = this.selectField.nth(1);
 

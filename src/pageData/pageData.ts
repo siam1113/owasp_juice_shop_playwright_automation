@@ -14,18 +14,7 @@ export const logInCredentials = {
   password: "123456",
 };
 
-export const checkOutInformation = {
-  firstName: "Jack",
-  lastName: "Ma",
-  zipCode: "1996",
-};
-
-export const productPrice = {
-  high: "$49.99",
-  low: "$7.99",
-};
-
 export const productData = {
-  product1: { ProductId: 1, BasketId: "18", quantity: 1 },
-  product2: { ProductId: 2, BasketId: "18", quantity: 1 },
+  product1: { ProductId: 1, BasketId: "6", quantity: 1 },
+  product2: { ProductId: 2, BasketId: "6", quantity: 1 },
 };
