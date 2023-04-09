@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import { checkOutInformation } from "../pageData/pageData";
 
 export default class CheckoutPage {
   page: Page;
@@ -58,7 +57,7 @@ export default class CheckoutPage {
       "input[placeholder='Please provide a state.']"
     );
     this.submitBtn = page.locator("text=' Submit '");
-    this.selectRadioBtn = page.locator("span.mat-radio-outer-circle");
+    this.selectRadioBtn = page.locator("label.mat-radio-label");
 
     // Payment
     this.inputTextField = page.locator("input[type=text]");
@@ -97,11 +96,13 @@ export default class CheckoutPage {
   }
 
   async selectAddressAndContinue() {
+    await this.selectRadioBtn.nth(0).scrollIntoViewIfNeeded();
     await this.selectRadioBtn.nth(0).click();
     await this.continueBtn.click();
   }
 
   async chooseDeliverySpeedAndContinue() {
+    await this.selectRadioBtn.nth(0).scrollIntoViewIfNeeded();
     await this.selectRadioBtn.nth(0).click();
     await this.continueBtn.click();
   }
