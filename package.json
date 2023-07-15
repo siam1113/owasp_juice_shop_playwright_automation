@@ -7,7 +7,8 @@
     "apiTests": "npx playwright test tests/api/ --workers=1",
     "e2eTests": "npx playwright test tests/e2e/ --workers=1",
     "smokeTests": "npx playwright test tests/smoke/ --workers=1",
-    "allTests": "npx playwright test tests --workers=1"
+    "allTests": "npx playwright test tests --workers=1",
+    "deploy": "del index.html ;  mv playwright-report/index.html . ; git add . ; git commit -m `Get-Date`; git push"
   },
   "keywords": [],
   "author": "",
