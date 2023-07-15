@@ -24,10 +24,10 @@ export default class CartPage {
   }
 
   async verifyAddedProductsAreInTheCart(productsName: string[]) {
-    productsName.forEach(async (productName) => {
+    for(const productName of productsName) {
       await expect(
         this.page.getByText(productName, { exact: true })
       ).toBeVisible();
-    });
+    }
   }
 }

@@ -56,7 +56,7 @@ test.describe("Product CRUD test", async () => {
     return basketItemsResponseBody["data"]["Products"];
   };
 
-  test.beforeAll(async ({}) => {
+  test.beforeAll(async () => {
     apiContext = await request.newContext({
       baseURL: "https://juice-shop.herokuapp.com",
     });
@@ -65,7 +65,7 @@ test.describe("Product CRUD test", async () => {
     token = await login(logInCredentials.userName, logInCredentials.password);
   });
 
-  test.beforeEach(async ({}) => {
+  test.beforeEach(async () => {
     // Clear basket
     const basketProducts = await getBasketProducts();
     const totalProducts = basketProducts.length;
@@ -75,7 +75,7 @@ test.describe("Product CRUD test", async () => {
     }
   });
 
-  test(`verify adding single product`, async ({}) => {
+  test(`verify adding single product`, async () => {
     // Step 1: Add 1 item to the basket
     await addProduct(productData.product1);
 
@@ -85,7 +85,7 @@ test.describe("Product CRUD test", async () => {
     expect(productCount).toBe(1);
   });
 
-  test(`verify adding and deleting a product`, async ({}) => {
+  test(`verify adding and deleting a product`, async () => {
     // Step 1: Add 2 item to the basket
     await addProduct(productData.product1);
     const productInfo = await addProduct(productData.product2);
