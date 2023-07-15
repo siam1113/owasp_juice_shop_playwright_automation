@@ -1,0 +1,21 @@
+name: Sonar Code Quality Scan
+
+on:
+    push:
+        branches:
+            - master     
+jobs:
+    sonarcloudTrigger:
+        name: Sonar Code Quality Scan
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone the Repository
+              uses: actions/checkout@v2
+              with:
+                # Disabling shallow clone is recommended for improving relevancy of reporting
+                fetch-depth: 0
+            - name: Code Analysis with Sonar
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

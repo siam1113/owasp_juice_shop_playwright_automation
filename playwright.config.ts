@@ -1,6 +1,8 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 import { devices } from "@playwright/test";
+import dotenv from "dotenv";
 
+dotenv.config();
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -49,6 +51,9 @@ const config: PlaywrightTestConfig = {
       testIgnore: "./src/tests/visual/*",
       use: {
         ...devices["Desktop Chrome"],
+        extraHTTPHeaders: {
+          Authorization: "Basic YWRtaW46MTIzNDU2",
+        },
       },
     },
 

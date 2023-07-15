@@ -10,8 +10,8 @@ export const URLS = {
 };
 
 export const logInCredentials = {
-  userName: "demo@yopmail.com",
-  password: "123456",
+  userName: process.env.EMAIL,
+  password: process.env.PASSWORD,
 };
 
 export const productData = {

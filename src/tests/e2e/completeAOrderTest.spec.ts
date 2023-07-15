@@ -3,7 +3,7 @@ import CheckoutPage from "../../pageObjects/CheckoutPage";
 import InventoryPage from "../../pageObjects/InventoryPage";
 import LoginPage from "../../pageObjects/LoginPage";
 
-test.only(`Verify completing order with single item`, async ({ page }) => {
+test(`Verify completing order with single item`, async ({ page }) => {
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const checkOutPage = new CheckoutPage(page);
