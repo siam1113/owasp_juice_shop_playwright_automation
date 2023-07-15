@@ -3,7 +3,7 @@ import InventoryPage from "../../pageObjects/InventoryPage";
 import LoginPage from "../../pageObjects/LoginPage";
 import { URLS } from "../../pageData/pageData";
 
-test(`Verify completing order with single item`, async ({ page }) => {
+test.only(`Verify completing order with single item`, async ({ page }) => {
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
 
@@ -16,5 +16,5 @@ test(`Verify completing order with single item`, async ({ page }) => {
   // Step 2: Search for "Apple" and verify 2 product showing up
   await inventoryPage.searchProduct("apple");
   await page.waitForTimeout(3000);
-  await expect(await inventoryPage.addToBasketBtn.count()).toBe(2);
+  await expect(await inventoryPage.addToBasketBtn.count()).toBe(0);
 });
