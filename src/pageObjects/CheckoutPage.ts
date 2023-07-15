@@ -102,9 +102,7 @@ export default class CheckoutPage {
   }
 
   async chooseDeliverySpeedAndContinue() {
-    await this.selectRadioBtn.nth(0).scrollIntoViewIfNeeded();
-    await this.selectRadioBtn.nth(0).click();
-    await this.continueBtn.click();
+    await this.selectAddressAndContinue();
   }
 
   async addNewCard() {
